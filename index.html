@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Report</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #f3f7fa;
+      color: #333;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+    .header img {
+      height: 80px;
+    }
+    .header div {
+      text-align: center;
+      font-weight: bold;
+      color: #2e6da4;
+    }
+    .header h1 {
+      margin: 5px 0;
+      font-size: 1.8em;
+      color: #2c3e50;
+    }
+    .date {
+      text-align: right;
+      color: #7f8c8d;
+      font-size: 0.9em;
+    }
+    .stats-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .stat-box {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #6ec1e4, #2980b9);
+      color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+    .stat-box:hover {
+      transform: scale(1.05);
+    }
+    .stat-box h2 {
+      margin: 10px 0;
+      font-size: 28px;
+    }
+    .stat-box p {
+      font-size: 14px;
+      margin: 0;
+    }
+    .tables-container {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+      overflow-x: auto;
+    }
+    .table-box {
+      flex: 1;
+      min-width: 320px;
+      background-color: #ecf0f1;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .table-box h3 {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px;
+      margin: 0;
+      text-align: center;
+      font-size: 18px;
+      font-weight: normal;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      font-size: 14px;
+    }
+    th {
+      background-color: #2980b9;
+      color: #ffffff;
+      font-weight: bold;
+      border-bottom: 2px solid #3498db;
+    }
+    td {
+      border-bottom: 1px solid #ddd;
+    }
+    tr:nth-child(even) {
+      background-color: #f8f9f9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLr4cljgCHX6YG8_z7phBregJ-jAl3qS5Rcg&s" alt="Hospital Logo">
+    <div>
+      <h1>Abwa Hospital & Research Center</h1>
+      <p>Khurianwala-Jaranwala Road</p>
+    </div>
+    <div class="date">
+      <p>From: <strong>05-Nov-2024</strong></p>
+      <p>To: <strong>05-Nov-2024</strong></p>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="stats-container">
+    <div class="stat-box">
+      <h2>2,359</h2>
+      <p>Total Patients</p>
+    </div>
+    <div class="stat-box">
+      <h2>1,398</h2>
+      <p>OPD</p>
+    </div>
+    <div class="stat-box">
+      <h2>998</h2>
+      <p>ER OPD</p>
+    </div>
+    <div class="stat-box">
+      <h2>96</h2>
+      <p>IPD</p>
+    </div>
+    <div class="stat-box">
+      <h2>25 / 20</h2>
+      <p>Admission / Discharge</p>
+    </div>
+    <div class="stat-box">
+      <h2>2,359</h2>
+      <p>Pathology Total Test</p>
+    </div>
+    <div class="stat-box">
+      <h2>5 / 49 / 25</h2>
+      <p>CT / X-ray / Ultrasound</p>
+    </div>
+    <div class="stat-box">
+      <h2>15</h2>
+      <p>Dialysis Unit</p>
+    </div>
+    <div class="stat-box">
+      <h2>2 / 1 / 0</h2>
+      <p>Angiography / Angioplasty / Surgery</p>
+    </div>
+  </div>
+
+  <!-- Tables Section -->
+  <div class="tables-container">
+    <!-- Department-wise OPD Summary -->
+    <div class="table-box">
+      <h3>Department wise OPD summary</h3>
+      <table>
+        <tr><th>Department</th><th>Visit</th></tr>
+        <tr><td>Cardiology</td><td>8</td></tr>
+        <tr><td>Dermatology</td><td>20</td></tr>
+        <!-- Add more rows as needed -->
+      </table>
+    </div>
+
+    <!-- Doctor-wise OPD Summary -->
+    <div class="table-box">
+      <h3>Doctor wise OPD summary</h3>
+      <table>
+        <tr><th>Doctor Name</th><th>Department</th><th>Visit</th></tr>
+        <tr><td>Dr Asif Manzoor Basra</td><td>Paediatrics</td><td>18</td></tr>
+        <tr><td>Dr Khalid Amin</td><td>Medicine & Allied</td><td>13</td></tr>
+        <tr><td>Dr Sarah Khan</td><td>Cardiology</td><td>15</td></tr>
+        <tr><td>Dr Nadia Sheikh</td><td>Dermatology</td><td>20</td></tr>
+        <tr><td>Dr Fahad Mahmood</td><td>Neurology</td><td>12</td></tr>
+        <tr><td>Dr Ayesha Ali</td><td>Orthopaedics</td><td>25</td></tr>
+        <tr><td>Dr Zafar Iqbal</td><td>Ophthalmology</td><td>30</td></tr>
+        <tr><td>Dr Bilal Ahmed</td><td>ENT</td><td>22</td></tr>
+        <tr><td>Dr Mariam Noor</td><td>Gastroenterology</td><td>14</td></tr>
+        <tr><td>Dr Saeed Hashmi</td><td>Oncology</td><td>9</td></tr>
+        <tr><td>Dr Tania Malik</td><td>Nephrology</td><td>10</td></tr>
+        <!-- Add more doctors as needed -->
+      </table>
+    </div>
+
+    <!-- IPD Summary -->
+    <div class="table-box">
+  <h3>IPD Summary</h3>
+  <table>
+    <tr><th>Department</th><th>Admissions</th><th>Discharges</th></tr>
+    <tr><td>General Medicine</td><td>5</td><td>4</td></tr>
+    <tr><td>Cardiology</td><td>3</td><td>2</td></tr>
+    <tr><td>Orthopaedics</td><td>4</td><td>3</td></tr>
+    <tr><td>Surgery</td><td>7</td><td>5</td></tr>
+    <tr><td>Neurology</td><td>2</td><td>1</td></tr>
+    <tr><td>Gastroenterology</td><td>3</td><td>2</td></tr>
+    <tr><td>Oncology</td><td>6</td><td>5</td></tr>
+    <tr><td>Paediatrics</td><td>4</td><td>3</td></tr>
+    <tr><td>Nephrology</td><td>2</td><td>2</td></tr>
+    <tr><td>Urology</td><td>3</td><td>3</td></tr>
+    <tr><td>Ophthalmology</td><td>1</td><td>1</td></tr>
+    <tr><td>ENT</td><td>2</td><td>1</td></tr>
+    <!-- Add more departments if needed -->
+  </table>
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>
